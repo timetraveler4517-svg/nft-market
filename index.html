@@ -1,28 +1,89 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Market</title>
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
-</head>
-<body>
-  <h1>🛒 Мой маркет</h1>
+<meta charset="UTF-8">
+<title>NFT Portal</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
 
-  <button onclick="buy()">Купить</button>
-
-  <script>
-    const tg = Telegram.WebApp;
-    tg.ready();
-
-    function buy() {
-      tg.showAlert("Тест: покупка");
-    }
-  </script>function buyNFT() {
-    Telegram.WebApp.showAlert("Поздравляем! NFT куплен (тест).");
+<style>
+body {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #0e0e11;
+  color: white;
+  margin: 0;
+  padding: 12px;
 }
+h1 { font-size: 22px; margin-bottom: 10px; }
+
+.section {
+  margin-bottom: 18px;
+}
+.card {
+  background: #1a1a22;
+  border-radius: 14px;
+  padding: 14px;
+  margin-bottom: 10px;
+}
+.button {
+  background: linear-gradient(90deg,#5b7cff,#8b5cff);
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  margin-top: 8px;
+  cursor: pointer;
+}
+.small {
+  font-size: 13px;
+  opacity: 0.8;
+}
+</style>
+</head>
+
+<body>
+<h1>🌀 NFT Portal</h1>
+
+<div class="section">
+  <div class="card">
+    <b>🔥 Trending NFTs</b>
+    <div class="small">Popular collections</div>
+    <div class="button"
+      onclick="openLink('https://getgems.io')">Open Getgems</div>
+  </div>
+
+  <div class="card">
+    <b>🚀 NFT Drops</b>
+    <div class="small">New mints & drops</div>
+    <div class="button"
+      onclick="openLink('https://fragment.com')">Open Fragment</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="card">
+    <b>🔁 Trade & Markets</b>
+    <div class="small">Top marketplaces</div>
+    <div class="button"
+      onclick="openLink('https://getgems.io/marketplace')">Trade NFTs</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="card">
+    <b>👤 Profile</b>
+    <div class="small">Wallet & activity</div>
+    <div class="button"
+      onclick="alert('Profile coming soon')">Open Profile</div>
+  </div>
+</div>
+
+<script>
+const tg = Telegram.WebApp;
+tg.ready();
+
+function openLink(url) {
+  tg.openLink(url);
+}
+</script>
 
 </body>
-<h2>Товар: NFT-арт</h2>
-<p>Цена: 10 Stars</p>
-<button onclick="buyNFT()">Купить NFT</button>
 </html>
