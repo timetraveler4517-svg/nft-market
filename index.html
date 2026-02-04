@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Market</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+  <h1>🛒 Мой маркет</h1>
+
+  <button onclick="buy()">Купить</button>
+
+  <script>
+    const tg = Telegram.WebApp;
+    tg.ready();
+
+    function buy() {
+      tg.showAlert("Тест: покупка");
+    }
+  </script>
+</body>
+</html>
